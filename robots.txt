@@ -1,1 +1,1 @@
-User-agent: * Disallow: Sitemap: https://martinsawojide.github.iomartinsawojide/sitemap.xml
+User-agent: * Disallow: Sitemap: https://martinsawojide.github.io/sitemap.xml
