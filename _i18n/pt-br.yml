@@ -1,0 +1,40 @@
+# Portuguese (Brazil) UI strings — TODO: review and refine translations
+global:
+  read_more: "Leia mais"
+  back: "Voltar"
+  search: "Pesquisar"
+  toggle_theme: "Alternar tema"
+  language: "Idioma"
+
+nav:
+  about: "Sobre"
+  blog: "Blog"
+  publications: "Publicações"
+  projects: "Projetos"
+  cv: "CV"
+  news: "Notícias"
+  teaching: "Ensino"
+
+about:
+  hero_tagline: "Cientista de dados · Engenheiro Industrial · Edge AI"
+  cta_projects: "Ver projetos"
+  cta_blog: "Ler blog"
+  selected_publications: "Publicações selecionadas"
+  latest_posts: "Últimas postagens"
+
+blog:
+  no_posts: "Nenhuma postagem ainda..."
+  posted_on: "Publicado em"
+
+footer:
+  powered_by: "Desenvolvido com"
+  hosted_by: "Hospedado por"
+  photos: "Fotos de"
+
+feature_cards:
+  data_science_title: "Ciência de dados"
+  data_science_desc: "Aprendizado de máquina, análise estatística e insights com IA."
+  industrial_eng_title: "Engenharia industrial"
+  industrial_eng_desc: "Seis Sigma, otimização de processos e excelência operacional."
+  edge_ai_title: "Computação de borda e IA"
+  edge_ai_desc: "Inferência local em hardware — NVIDIA Jetson, Raspberry Pi, TinyML."

@@ -14,7 +14,8 @@ footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website, six-sigma, ai, data-science, industrial-engineering,  # add your own keywords or leave empty
+# keywords: jekyll, jekyll-theme, academic-website, portfolio-website, six-sigma, ai, data-science, industrial-engineering,  # add your own keywords or leave empty
+keywords: jekyll, jekyll-theme, academic-website, portfolio-website, six-sigma, ai, data-science, industrial-engineering, edge-computing, local-inference, hardware-ai, tinyml, embedded-systems, nvidia-jetson, raspberry-pi
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -217,6 +218,7 @@ plugins:
   - jekyll-link-attributes
   - jekyll-minifier
   - jekyll-paginate-v2
+  - jekyll-polyglot
   - jekyll-regex-replace
   - jekyll/scholar
   - jekyll-sitemap
@@ -225,6 +227,26 @@ plugins:
   - jekyll-twitter-plugin
   - jemoji
   - terser
+
+# -----------------------------------------------------------------------------
+# i18n / Multi-language (jekyll-polyglot)
+# Languages: English (default), French, Spanish, Portuguese (BR),
+#            German, Japanese, Chinese Simplified, Norwegian
+# Only about + cv pages are translated initially; all others excluded to avoid
+# conflicts with jekyll-scholar, jekyll-archives, and jekyll-paginate-v2.
+# -----------------------------------------------------------------------------
+languages: ["en", "fr", "es", "pt-br", "de", "ja", "zh-cn", "no"]
+default_lang: "en"
+exclude_from_localization:
+  - assets
+  - _sass
+  - Gemfile
+  - Gemfile.lock
+  - _bibliography
+  - _posts
+  - _news
+  - _projects
+parallel_localization: true
 
 # Sitemap settings
 defaults:
@@ -453,7 +475,21 @@ third_party_libraries:
   google_fonts:
     url:
       # fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
-      fonts: "https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Overpass+Mono:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      # fonts: "https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Overpass+Mono:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      fonts: "https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Maven+Pro:wght@400..900&family=Overpass+Mono:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+  # anime.js — lightweight JavaScript animation library (loaded when page.anime: true)
+  animejs:
+    integrity:
+      js: "sha256-aHIi3PNMRYT3AqgCkJeXKHoXMpX9DRG8MNOaEXe0VJo="
+    url:
+      js: "https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"
+    version: "3.2.2"
+  # WaveSurfer.js — waveform audio player (loaded conditionally when page.audio: true)
+  wavesurfer:
+    url:
+      js: "https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.min.js"
+    integrity:
+      js: "" # No SRI hash available from unpkg CDN; review periodically
   highlightjs:
     integrity:
       css:

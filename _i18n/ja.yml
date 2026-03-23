@@ -1,0 +1,40 @@
+# Japanese UI strings — TODO: review and refine translations
+global:
+  read_more: "続きを読む"
+  back: "戻る"
+  search: "検索"
+  toggle_theme: "テーマ切替"
+  language: "言語"
+
+nav:
+  about: "自己紹介"
+  blog: "ブログ"
+  publications: "論文"
+  projects: "プロジェクト"
+  cv: "履歴書"
+  news: "ニュース"
+  teaching: "教育"
+
+about:
+  hero_tagline: "データサイエンティスト · 産業工学 · エッジAI"
+  cta_projects: "プロジェクトを見る"
+  cta_blog: "ブログを読む"
+  selected_publications: "主要論文"
+  latest_posts: "最新の投稿"
+
+blog:
+  no_posts: "投稿はまだありません..."
+  posted_on: "投稿日"
+
+footer:
+  powered_by: "Powered by"
+  hosted_by: "Hosted by"
+  photos: "写真提供"
+
+feature_cards:
+  data_science_title: "データサイエンス"
+  data_science_desc: "機械学習、統計解析、AIによるインサイト。"
+  industrial_eng_title: "産業工学"
+  industrial_eng_desc: "シックスシグマ、プロセス最適化、業務改善。"
+  edge_ai_title: "エッジコンピューティング & AI"
+  edge_ai_desc: "ローカル推論 — NVIDIA Jetson、Raspberry Pi、TinyML。"

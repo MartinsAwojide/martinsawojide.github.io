@@ -18,7 +18,8 @@ span,
 strong {
   color: var(--global-text-color);
   // font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, monospace;
-  font-family: 'Overpass Mono', 'Maven Pro', Rubik;
+  /* OLD: font-family: 'Overpass Mono', 'Maven Pro', Rubik; */
+  font-family: var(--font-primary);
 }
 
 hr {
@@ -908,12 +909,87 @@ html.transition *:after {
   transition-delay: 0 !important;
 }
 
+// =============================================================================
+// CALLOUT / ALERT BOXES (Archie-style, reusing existing CSS vars from _themes.scss)
+// Usage: {% include callout.liquid type="tip" content="Your text here." %}
+// Types: note | tip | warning | danger | custom
+// NOTE: content= param is plain text or HTML only (no Markdown rendering in Liquid params)
+// =============================================================================
+
+.callout {
+  border-left: 4px solid;
+  border-radius: 0;
+  padding: 0.85rem 1rem 0.85rem 1.1rem;
+  margin: 1.5rem 0;
+  position: relative;
+
+  &::before {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .callout-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .callout-content {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--global-text-color);
+  }
+
+  &.callout-tip {
+    border-color: var(--global-tip-block);
+    background: var(--global-tip-block-bg);
+    .callout-title { color: var(--global-tip-block-title); }
+    &::before { content: '\f058'; color: var(--global-tip-block); } // fa-circle-check
+  }
+
+  &.callout-warning {
+    border-color: var(--global-warning-block);
+    background: var(--global-warning-block-bg);
+    .callout-title { color: var(--global-warning-block-title); }
+    &::before { content: '\f071'; color: var(--global-warning-block); } // fa-triangle-exclamation
+  }
+
+  &.callout-danger {
+    border-color: var(--global-danger-block);
+    background: var(--global-danger-block-bg);
+    .callout-title { color: var(--global-danger-block-title); }
+    &::before { content: '\f057'; color: var(--global-danger-block); } // fa-circle-xmark
+  }
+
+  &.callout-note {
+    border-color: var(--global-theme-color);
+    background: rgba(240, 46, 24, 0.05);
+    .callout-title { color: var(--global-theme-color); }
+    &::before { content: '\f05a'; color: var(--global-theme-color); } // fa-circle-info
+  }
+
+  &.callout-custom {
+    border-color: var(--global-text-color-light);
+    background: var(--global-bg-color);
+    .callout-title { color: var(--global-text-color-light); }
+    &::before { content: '\f27a'; color: var(--global-text-color-light); } // fa-comment-dots
+  }
+}
+
 // Extra Markdown style (post Customization)
 .post {
   .post-meta {
     color: var(--global-text-color-light);
     font-size: 0.875rem;
     margin-bottom: 0;
+    /* BuildwithHussein: uppercase metadata labels with letter-spacing */
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
   }
 
   .post-tags {

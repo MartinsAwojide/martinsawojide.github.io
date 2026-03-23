@@ -1,0 +1,37 @@
+{% comment %}
+  Callout / Alert box include (Archie-style)
+  Usage: {% include callout.liquid type="tip" title="Optional Title" content="Your text here." %}
+
+  Types: note | tip | warning | danger | custom
+  - type     (required): one of the 5 types above
+  - title    (optional): overrides the default label for this callout type
+  - content  (required): plain text or HTML — Markdown is NOT rendered inside include params
+
+  Examples:
+    {% include callout.liquid type="tip" content="Use Inter font for best results." %}
+    {% include callout.liquid type="warning" title="Heads up" content="This API is deprecated." %}
+    {% include callout.liquid type="danger" content="Do not run this in production." %}
+    {% include callout.liquid type="note" content="Edge computing enables local AI inference." %}
+    {% include callout.liquid type="custom" title="Note" content="Custom styled callout." %}
+{% endcomment %}
+
+{% assign _callout_type = include.type | default: "note" %}
+
+{% if include.title %}
+  {% assign _callout_title = include.title %}
+{% elsif _callout_type == "tip" %}
+  {% assign _callout_title = "Tip" %}
+{% elsif _callout_type == "warning" %}
+  {% assign _callout_title = "Warning" %}
+{% elsif _callout_type == "danger" %}
+  {% assign _callout_title = "Danger" %}
+{% elsif _callout_type == "note" %}
+  {% assign _callout_title = "Note" %}
+{% else %}
+  {% assign _callout_title = "Info" %}
+{% endif %}
+
+<div class="callout callout-{{ _callout_type }}" role="note" aria-label="{{ _callout_title }}">
+  <div class="callout-title">{{ _callout_title }}</div>
+  <div class="callout-content">{{ include.content }}</div>
+</div>

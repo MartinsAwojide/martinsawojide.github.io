@@ -1,28 +1,73 @@
+{% comment %}
+OLD basic HTML5 audio include preserved for reference:
+
 <figure>
   <audio
     src="{% if include.cache_bust %}{{ include.path | relative_url | bust_file_cache }}{% else %}{{ include.path | relative_url }}{% endif %}"
-    {% if include.class %}
-      class="{{ include.class }}"
-    {% endif %}
-    {% if include.alt %}
-      alt="{{ include.alt }}"
-    {% endif %}
-    {% if include.title %}
-      title="{{ include.title }}"
-    {% endif %}
-    {% if include.autoplay %}
-      autoplay
-    {% endif %}
-    {% if include.controls %}
-      controls
-    {% endif %}
-    {% if include.loop %}
-      loop
-    {% endif %}
-    {% if include.muted %}
-      muted
-    {% endif %}
+    {% if include.class %}class="{{ include.class }}"{% endif %}
+    {% if include.alt %}alt="{{ include.alt }}"{% endif %}
+    {% if include.title %}title="{{ include.title }}"{% endif %}
+    {% if include.autoplay %}autoplay{% endif %}
+    {% if include.controls %}controls{% endif %}
+    {% if include.loop %}loop{% endif %}
+    {% if include.muted %}muted{% endif %}
   />
+  {% if include.caption %}<figcaption class="caption">{{ include.caption }}</figcaption>{% endif %}
+</figure>
+END OLD include
+
+NEW: WaveSurfer.js waveform player
+Usage:
+  {% include audio.liquid path="assets/audio/myfile.mp3" %}
+  {% include audio.liquid path="assets/audio/myfile.mp3" title="Episode 1" caption="A short intro." %}
+
+Parameters:
+  path        (required): relative path OR full URL to audio file
+              NOTE: Remote URLs must be CORS-enabled (Access-Control-Allow-Origin: *)
+  id          (optional): unique id for multiple players on one page (auto-generated if omitted)
+  title       (optional): player title shown above waveform
+  caption     (optional): figcaption text shown below player
+  cache_bust  (optional): set to true to append cache-bust hash to local path
+  autoplay    (optional): not recommended with WaveSurfer; use with caution
+
+Requires page frontmatter: audio: true  (loads WaveSurfer.js only on that page)
+{% endcomment %}
+
+{% assign _audio_id = include.id | default: include.path | md5 | slice: 0, 8 %}
+{% if include.cache_bust %}
+  {% assign _audio_src = include.path | relative_url | bust_file_cache %}
+{% elsif include.path contains '://' %}
+  {% assign _audio_src = include.path %}
+{% else %}
+  {% assign _audio_src = include.path | relative_url %}
+{% endif %}
+
+<figure class="wavesurfer-figure">
+  {% if include.title %}
+    <div class="wavesurfer-title">{{ include.title }}</div>
+  {% endif %}
+
+  <div
+    class="wavesurfer-container"
+    id="ws-{{ _audio_id }}"
+    data-audio-src="{{ _audio_src }}"
+    {% if include.autoplay %}data-autoplay="true"{% endif %}
+  >
+    <!-- WaveSurfer waveform renders here -->
+    <div class="wavesurfer-wave" id="waveform-{{ _audio_id }}"></div>
+
+    <div class="wavesurfer-controls">
+      <button class="wavesurfer-play-btn" aria-label="Play / Pause" data-target="ws-{{ _audio_id }}">
+        <i class="fas fa-play wavesurfer-icon-play"></i>
+        <i class="fas fa-pause wavesurfer-icon-pause" style="display:none"></i>
+      </button>
+      <div class="wavesurfer-time">
+        <span class="wavesurfer-current">0:00</span>
+        <span class="wavesurfer-sep"> / </span>
+        <span class="wavesurfer-duration">--:--</span>
+      </div>
+    </div>
+  </div>
 
   {% if include.caption %}
     <figcaption class="caption">{{ include.caption }}</figcaption>

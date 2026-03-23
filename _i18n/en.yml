@@ -1,0 +1,42 @@
+# English UI strings
+# Used via {{ site.data.i18n[site.active_lang].key }} or Jekyll-Polyglot t tag
+
+global:
+  read_more: "Read more"
+  back: "Back"
+  search: "Search"
+  toggle_theme: "Toggle theme"
+  language: "Language"
+
+nav:
+  about: "About"
+  blog: "Blog"
+  publications: "Publications"
+  projects: "Projects"
+  cv: "CV"
+  news: "News"
+  teaching: "Teaching"
+
+about:
+  hero_tagline: "Data Scientist · Industrial Engineer · Edge AI"
+  cta_projects: "View Projects"
+  cta_blog: "Read Blog"
+  selected_publications: "Selected Publications"
+  latest_posts: "Latest Posts"
+
+blog:
+  no_posts: "No posts so far..."
+  posted_on: "Posted on"
+
+footer:
+  powered_by: "Powered by"
+  hosted_by: "Hosted by"
+  photos: "Photos from"
+
+feature_cards:
+  data_science_title: "Data Science"
+  data_science_desc: "Machine learning, statistical analysis, and AI-driven insights."
+  industrial_eng_title: "Industrial Engineering"
+  industrial_eng_desc: "Six Sigma, process optimization, and operational excellence."
+  edge_ai_title: "Edge Computing & AI"
+  edge_ai_desc: "Local inference on hardware — NVIDIA Jetson, Raspberry Pi, TinyML."

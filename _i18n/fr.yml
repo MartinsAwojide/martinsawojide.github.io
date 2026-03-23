@@ -1,0 +1,40 @@
+# French UI strings — TODO: translate values below
+global:
+  read_more: "Lire la suite"
+  back: "Retour"
+  search: "Rechercher"
+  toggle_theme: "Changer le thème"
+  language: "Langue"
+
+nav:
+  about: "À propos"
+  blog: "Blog"
+  publications: "Publications"
+  projects: "Projets"
+  cv: "CV"
+  news: "Actualités"
+  teaching: "Enseignement"
+
+about:
+  hero_tagline: "Data Scientist · Ingénieur Industriel · Edge AI"
+  cta_projects: "Voir les projets"
+  cta_blog: "Lire le blog"
+  selected_publications: "Publications sélectionnées"
+  latest_posts: "Derniers articles"
+
+blog:
+  no_posts: "Aucun article pour l'instant..."
+  posted_on: "Publié le"
+
+footer:
+  powered_by: "Propulsé par"
+  hosted_by: "Hébergé par"
+  photos: "Photos de"
+
+feature_cards:
+  data_science_title: "Science des données"
+  data_science_desc: "Apprentissage automatique, analyse statistique et insights basés sur l'IA."
+  industrial_eng_title: "Ingénierie industrielle"
+  industrial_eng_desc: "Six Sigma, optimisation des processus et excellence opérationnelle."
+  edge_ai_title: "Informatique de bord & IA"
+  edge_ai_desc: "Inférence locale sur matériel — NVIDIA Jetson, Raspberry Pi, TinyML."

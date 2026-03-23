@@ -1,0 +1,40 @@
+# Chinese Simplified UI strings — TODO: review and refine translations
+global:
+  read_more: "阅读更多"
+  back: "返回"
+  search: "搜索"
+  toggle_theme: "切换主题"
+  language: "语言"
+
+nav:
+  about: "关于"
+  blog: "博客"
+  publications: "论文"
+  projects: "项目"
+  cv: "简历"
+  news: "新闻"
+  teaching: "教学"
+
+about:
+  hero_tagline: "数据科学家 · 工业工程师 · 边缘 AI"
+  cta_projects: "查看项目"
+  cta_blog: "阅读博客"
+  selected_publications: "精选论文"
+  latest_posts: "最新文章"
+
+blog:
+  no_posts: "暂无文章..."
+  posted_on: "发布于"
+
+footer:
+  powered_by: "由"
+  hosted_by: "托管于"
+  photos: "图片来自"
+
+feature_cards:
+  data_science_title: "数据科学"
+  data_science_desc: "机器学习、统计分析与 AI 驱动的洞察。"
+  industrial_eng_title: "工业工程"
+  industrial_eng_desc: "六西格玛、流程优化与卓越运营。"
+  edge_ai_title: "边缘计算与 AI"
+  edge_ai_desc: "本地推理硬件 — NVIDIA Jetson、Raspberry Pi、TinyML。"

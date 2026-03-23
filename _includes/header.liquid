@@ -135,6 +135,12 @@
               </button>
             </li>
           {% endif %}
+          <!-- Language switcher (jekyll-polyglot) -->
+          {% if site.languages and site.languages.size > 1 %}
+            <li class="nav-item lang-switcher-item-nav">
+              {% include lang_switcher.liquid %}
+            </li>
+          {% endif %}
         </ul>
       </div>
     </div>

@@ -69,6 +69,22 @@
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_css_cache }}">
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
+{% if page.audio %}
+  <!-- WaveSurfer.js waveform audio player (loaded only when page.audio: true) -->
+  <script defer src="{{ site.third_party_libraries.wavesurfer.url.js }}"></script>
+  <!-- WaveSurfer player CSS -->
+  <style>
+    .wavesurfer-figure { margin: 1.5rem 0; }
+    .wavesurfer-title { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--global-text-color-light); margin-bottom: 0.5rem; }
+    .wavesurfer-container { border: 2px solid var(--global-divider-color); border-radius: 0; padding: 0.75rem 1rem; background: var(--global-card-bg-color); }
+    .wavesurfer-wave { margin-bottom: 0.6rem; min-height: 60px; }
+    .wavesurfer-controls { display: flex; align-items: center; gap: 0.75rem; }
+    .wavesurfer-play-btn { background: var(--global-theme-color); color: #fff; border: none; border-radius: 0; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.75rem; flex-shrink: 0; transition: opacity 0.2s; }
+    .wavesurfer-play-btn:hover { opacity: 0.85; }
+    .wavesurfer-time { font-size: 0.78rem; font-family: var(--font-mono); color: var(--global-text-color-light); letter-spacing: 0.04em; }
+  </style>
+{% endif %}
+
 <!-- Dark Mode -->
 <script src="{{ '/assets/js/theme.js' | relative_url | bust_file_cache }}"></script>
 {% if site.enable_darkmode %}

@@ -1,0 +1,40 @@
+# Norwegian UI strings — TODO: review and refine translations
+global:
+  read_more: "Les mer"
+  back: "Tilbake"
+  search: "Søk"
+  toggle_theme: "Bytt tema"
+  language: "Språk"
+
+nav:
+  about: "Om meg"
+  blog: "Blogg"
+  publications: "Publikasjoner"
+  projects: "Prosjekter"
+  cv: "CV"
+  news: "Nyheter"
+  teaching: "Undervisning"
+
+about:
+  hero_tagline: "Dataforsker · Industriingeniør · Edge AI"
+  cta_projects: "Se prosjekter"
+  cta_blog: "Les blogg"
+  selected_publications: "Utvalgte publikasjoner"
+  latest_posts: "Siste innlegg"
+
+blog:
+  no_posts: "Ingen innlegg ennå..."
+  posted_on: "Publisert"
+
+footer:
+  powered_by: "Drevet av"
+  hosted_by: "Hostet av"
+  photos: "Bilder fra"
+
+feature_cards:
+  data_science_title: "Datavitenskap"
+  data_science_desc: "Maskinlæring, statistisk analyse og AI-drevne innsikter."
+  industrial_eng_title: "Industriell ingeniørfag"
+  industrial_eng_desc: "Six Sigma, prosessoptimalisering og operasjonell dyktighet."
+  edge_ai_title: "Edge Computing og AI"
+  edge_ai_desc: "Lokal inferens på maskinvare — NVIDIA Jetson, Raspberry Pi, TinyML."

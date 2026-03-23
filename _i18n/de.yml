@@ -1,0 +1,40 @@
+# German UI strings — TODO: review and refine translations
+global:
+  read_more: "Weiterlesen"
+  back: "Zurück"
+  search: "Suchen"
+  toggle_theme: "Design wechseln"
+  language: "Sprache"
+
+nav:
+  about: "Über mich"
+  blog: "Blog"
+  publications: "Publikationen"
+  projects: "Projekte"
+  cv: "Lebenslauf"
+  news: "Neuigkeiten"
+  teaching: "Lehre"
+
+about:
+  hero_tagline: "Data Scientist · Wirtschaftsingenieur · Edge AI"
+  cta_projects: "Projekte ansehen"
+  cta_blog: "Blog lesen"
+  selected_publications: "Ausgewählte Publikationen"
+  latest_posts: "Neueste Beiträge"
+
+blog:
+  no_posts: "Noch keine Beiträge..."
+  posted_on: "Veröffentlicht am"
+
+footer:
+  powered_by: "Erstellt mit"
+  hosted_by: "Gehostet von"
+  photos: "Fotos von"
+
+feature_cards:
+  data_science_title: "Datenwissenschaft"
+  data_science_desc: "Maschinelles Lernen, statistische Analyse und KI-gestützte Erkenntnisse."
+  industrial_eng_title: "Wirtschaftsingenieurwesen"
+  industrial_eng_desc: "Six Sigma, Prozessoptimierung und operative Exzellenz."
+  edge_ai_title: "Edge Computing & KI"
+  edge_ai_desc: "Lokale Inferenz auf Hardware — NVIDIA Jetson, Raspberry Pi, TinyML."
