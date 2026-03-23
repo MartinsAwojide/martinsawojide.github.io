@@ -10,3 +10,16 @@ _posts/2015-10-20-math.md
 _sass/font-awesome/*.scss
 _sass/tabler-icons/*.scss
 _scripts/search.liquid.js
+
+# New/modified files from Hugo-inspired redesign (not yet Prettier-formatted)
+_includes/callout.liquid
+_includes/lang_switcher.liquid
+_includes/audio.liquid
+_includes/latest_posts.liquid
+_includes/projects.liquid
+_includes/header.liquid
+_layouts/about.liquid
+purgecss.config.js
+assets/js/anime-setup.js
+assets/js/audio-player-setup.js
+assets/js/toc-sidebar.js

@@ -71,7 +71,11 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3.5"
-          bundler-cache: true
+          # bundler-cache: true  # OLD: ran bundle install in --deployment mode, which
+          #                      # fails with exit 16 when Gemfile.lock is out of sync
+          #                      # (e.g. after adding jekyll-polyglot to Gemfile)
+          bundler-cache: false   # NEW: we run bundle install manually below so bundler
+                                 # can update Gemfile.lock for any new gems
       - name: Setup Python 🐍
         uses: actions/setup-python@v5
         with:
@@ -86,6 +90,7 @@ jobs:
           value: ${{ github.repository }}
       - name: Install and Build 🔧
         run: |
+          bundle install
           sudo apt-get update && sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
