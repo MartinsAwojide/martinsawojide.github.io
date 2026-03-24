@@ -169,9 +169,8 @@
 {% endif %}
 
 {% if page.toc and page.toc.sidebar %}
-  <!-- Sidebar Table of Contents -->
-  <script defer src="{{ '/assets/js/bootstrap-toc.min.js' | relative_url | bust_file_cache }}"></script>
-  <!-- Sidebar TOC active-link highlighter (IntersectionObserver) -->
+  <!-- Sidebar TOC — custom builder + IntersectionObserver (replaces bootstrap-toc) -->
+  <!-- OLD: <script defer src="/assets/js/bootstrap-toc.min.js"></script> — dropped; custom JS handles TOC building -->
   <script defer src="{{ '/assets/js/toc-sidebar.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
 
@@ -185,6 +184,23 @@
     crossorigin="anonymous"
   ></script>
 {% endif %}
+
+<!-- Feather Icons — served locally (no CDN dependency) -->
+<script src="{{ '/assets/js/feather.min.js' | relative_url }}"></script>
+<script>
+  (function () {
+    function initFeather() {
+      if (typeof feather !== 'undefined') {
+        feather.replace({ width: '1.4em', height: '1.4em', 'stroke-width': 1.5 });
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFeather);
+    } else {
+      initFeather();
+    }
+  })();
+</script>
 
 <!-- Load Common JS -->
 <script src="{{ '/assets/js/no_defer.js' | relative_url | bust_file_cache }}"></script>

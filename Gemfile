@@ -17,7 +17,7 @@ group :jekyll_plugins do
     gem 'jekyll-tabs'
     gem 'jekyll-toc'
     gem 'jekyll-twitter-plugin'
-    gem 'jekyll-polyglot' # i18n multi-language support
+    # gem 'jekyll-polyglot'  # disabled — no multilingual support
     gem 'jemoji'
     gem 'terser'
     gem 'unicode_utils'

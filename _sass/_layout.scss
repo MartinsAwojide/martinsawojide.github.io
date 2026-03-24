@@ -36,13 +36,17 @@ body.sticky-bottom-footer {
 // =============================================================================
 
 .about-hero {
-  padding: 2.5rem 0 2rem;
-  border-bottom: 1px solid var(--global-divider-color);
-  margin-bottom: 2rem;
+  /* OLD: padding: 2.5rem 0 2rem; — reduced to tighten space around name */
+  padding: 0.75rem 0 0.25rem;
+  /* OLD: border-bottom: 1px solid var(--global-divider-color); — removed per user request */
+  /* OLD: margin-bottom: 2rem; — reduced */
+  margin-bottom: 0.75rem;
 
   .about-hero-name {
-    font-size: 2.4rem;
-    font-weight: 700;
+    /* OLD: font-size: 2.4rem; — scaled down for 16px base */
+    font-size: 2rem;
+    /* OLD: font-weight: 700; — made both first+last name bold */
+    font-weight: 300;
     margin-bottom: 0.4rem;
     color: var(--global-text-color);
     letter-spacing: -0.01em;
@@ -54,7 +58,8 @@ body.sticky-bottom-footer {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     font-weight: 500;
-    margin-bottom: 1.5rem;
+    /* OLD: margin-bottom: 1.5rem; — reduced, no CTA buttons below */
+    margin-bottom: 0;
   }
 
   .about-hero-cta {
@@ -104,29 +109,50 @@ body.sticky-bottom-footer {
 
 .feature-cards-row {
   display: grid;
+  /* 5 cards: 3 on first row, 2 centred on second via auto-fill */
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin: 2rem 0;
 
-  @media (max-width: 768px) {
+  /* 5th card: span behaviour handled by empty pseudo-column trick */
+  .feature-card:nth-child(4) { grid-column: 1; }
+  .feature-card:nth-child(5) { grid-column: 2; }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+    .feature-card:nth-child(4),
+    .feature-card:nth-child(5) { grid-column: auto; }
+  }
+
+  @media (max-width: 576px) {
     grid-template-columns: 1fr;
+    .feature-card:nth-child(4),
+    .feature-card:nth-child(5) { grid-column: auto; }
   }
 }
 
 .feature-card {
-  border: 2px solid var(--global-divider-color);
+  border: 1px solid #ebebeb;
   border-radius: 0;
   padding: 1.25rem 1rem;
-  background: var(--global-card-bg-color);
-  transition: border-color 0.2s ease;
+  background: #fafafa;
+  transition: border-color 0.2s ease, transform 0.2s ease;
 
   &:hover {
     border-color: var(--global-theme-color);
+    transform: translateY(-2px);
   }
+
+  /* Domain-specific icon colors */
+  &.domain-data-science .feature-card-icon   { color: var(--domain-data-science); }
+  &.domain-industrial .feature-card-icon     { color: var(--domain-industrial); }
+  &.domain-edge-ai .feature-card-icon        { color: var(--domain-edge-ai); }
+  &.domain-ai-science .feature-card-icon     { color: var(--domain-ai-science); }
+  &.domain-multi-agent .feature-card-icon    { color: var(--domain-multi-agent); }
 
   .feature-card-icon {
     font-size: 1.4rem;
-    color: var(--global-theme-color);
+    color: var(--global-theme-color); /* fallback */
     margin-bottom: 0.6rem;
   }
 
@@ -147,17 +173,41 @@ body.sticky-bottom-footer {
 }
 
 // =============================================================================
-// POST CARDS GRID (Archie + Cactus style, BuildwithHussein sharp borders)
+// POST CARDS GRID — BuildwithHussein staircase design
+// 3-column grid; each column is offset progressively (staircase effect)
 // =============================================================================
 
 .post-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
+  /* OLD: grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
   margin-bottom: 1.5rem;
+  padding-bottom: 8rem; /* absorb staircase overflow — 3.5rem per row * 2+ rows of cards */
+  overflow: visible;
+  align-items: start; /* required for staircase — prevents stretching */
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   @media (max-width: 576px) {
     grid-template-columns: 1fr;
+  }
+
+  /* Staircase: target .post-card-link (the actual grid items, not the article inside) */
+  .post-card-link:nth-child(3n + 1) { margin-top: 0; }
+  .post-card-link:nth-child(3n + 2) { margin-top: 1.75rem; }
+  .post-card-link:nth-child(3n + 3) { margin-top: 3.5rem; }
+
+  @media (max-width: 768px) {
+    .post-card-link:nth-child(2n + 1) { margin-top: 0; }
+    .post-card-link:nth-child(2n + 2) { margin-top: 1.5rem; }
+    .post-card-link:nth-child(2n + 1) { margin-top: 0; } /* reset row 2 col 1 */
+  }
+
+  @media (max-width: 576px) {
+    .post-card-link { margin-top: 0 !important; }
   }
 }
 
@@ -171,9 +221,11 @@ body.sticky-bottom-footer {
 }
 
 .post-card {
-  border: 2px solid var(--global-divider-color);
+  /* OLD: border: 2px solid var(--global-divider-color); */
+  /* OLD: background: var(--global-card-bg-color); */
+  border: 1px solid #ebebeb;
   border-radius: 0;
-  background: var(--global-card-bg-color);
+  background: #fafafa;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -365,33 +417,60 @@ body.sticky-bottom-footer {
 // =============================================================================
 
 #toc-sidebar {
-  padding: 0.75rem 0 0.75rem 0.75rem;
-  border-left: 2px solid var(--global-divider-color);
+  /* OLD: border-left: 2px solid var(--global-divider-color); — Cactus style: border only on active links */
+  padding: 0.75rem 0;
   font-size: 0.82rem;
+
+  /* Sticky: override Bootstrap sticky-top's top:0 so nav sits below the navbar */
+  position: sticky !important;
+  top: 5rem !important;            /* navbar ~56px + comfortable gap */
+  max-height: calc(100vh - 6rem); /* full viewport minus navbar — allows internal scroll */
+  overflow-y: auto;
+
+  /* Cactus "Contents" label */
+  &::before {
+    content: "Contents";
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
 
   @media (max-width: 767px) {
     display: none;
   }
 
+  /* Our JS builds plain ul/li/a — style them here */
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
 
     li {
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.25rem;
 
       a {
         color: var(--global-text-color-light);
         text-decoration: none;
         display: block;
-        padding: 0.15rem 0.5rem;
+        padding: 0.15rem 0.4rem 0.15rem 0.6rem;
         border-left: 2px solid transparent;
-        margin-left: -0.77rem;
+        margin-left: 0;
         transition: color 0.15s ease, border-color 0.15s ease;
+        border-bottom: none;         /* cancel Archie underline-link style */
+        background: transparent;
 
-        &:hover {
+        &:hover,
+        &:focus {
           color: var(--global-theme-color);
+          background: transparent;   /* cancel Archie fill-hover */
+          border-bottom: none;
           text-decoration: none;
         }
 
@@ -403,31 +482,57 @@ body.sticky-bottom-footer {
       }
     }
 
-    /* Indent nested headings (h3 inside h2) */
+    /* Cactus # prefix — h2 (top-level) */
+    > li > a::before {
+      content: "# ";
+      color: var(--global-theme-color);
+      font-weight: 700;
+    }
+
+    /* Nested ul = h3 level — indent + ## prefix */
     ul {
       padding-left: 0.75rem;
+      margin-top: 0.15rem;
+
+      > li > a::before {
+        content: "## ";
+        color: var(--global-theme-color);
+        font-weight: 700;
+      }
+
+      /* Nested ul = h4 level — deeper indent + ### prefix */
+      ul {
+        padding-left: 0.75rem;
+
+        > li > a::before {
+          content: "### ";
+          color: var(--global-theme-color);
+          font-weight: 700;
+        }
+      }
     }
   }
 }
 
 // =============================================================================
-// LANGUAGE SWITCHER (jekyll-polyglot navbar dropdown)
+// LANGUAGE SWITCHER — Hugo Blog Awesome inline style
+// Text codes side-by-side, pipe-separated, no dropdown
 // =============================================================================
 
-.lang-switcher-item-nav {
-  display: flex;
-  align-items: center;
-}
+// =============================================================================
+// LANGUAGE SWITCHER — minimal Bootstrap dropdown
+// =============================================================================
 
 .lang-switcher-btn {
   background: transparent;
   border: 1px solid var(--global-divider-color);
   border-radius: 0;
   color: var(--global-text-color);
-  font-size: 0.78rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: 0.25rem 0.6rem;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.55rem;
   transition: border-color 0.2s ease, color 0.2s ease;
 
   &:hover,
@@ -441,15 +546,17 @@ body.sticky-bottom-footer {
 
 .lang-switcher-menu {
   border-radius: 0;
-  border: 2px solid var(--global-divider-color);
+  border: 1px solid #ebebeb;
   background: var(--global-card-bg-color);
-  min-width: 160px;
-  padding: 0.25rem 0;
+  min-width: 140px;
+  padding: 0.2rem 0;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
 
   .lang-switcher-item {
-    font-size: 0.82rem;
+    padding: 0.3rem 0.85rem;
     color: var(--global-text-color);
-    padding: 0.35rem 0.85rem;
+    border-bottom: none;
 
     &:hover {
       background: var(--global-theme-color);
@@ -466,8 +573,22 @@ body.sticky-bottom-footer {
 
 // Profile
 .profile {
+  /* OLD: img { clip-path: inset(20% 3%); } — clip-path leaves empty layout space (doesn't affect box model) */
+  /* OLD: overflow: hidden on .profile — was clipping .more-info too; scoped to figure instead */
+
+  /* Scope crop container to figure only — .more-info is a sibling, stays unaffected */
+  figure {
+    overflow: hidden;
+  }
+
   img {
-    width: 100%;
+    /* Crop 3% L/R: widen to 100%/0.94 ≈ 106.4%, shift left half the excess */
+    width: 106.4%;
+    margin-left: -3.2%;
+    /* Crop 15% T/B: image height ≈ 1.593× container width, so 15% of h ≈ 23.9% of container width */
+    margin-top: -24%;
+    margin-bottom: -24%;
+    display: block;
   }
 }
 

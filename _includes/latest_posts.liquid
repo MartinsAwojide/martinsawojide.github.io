@@ -52,8 +52,13 @@ OLD table-based layout preserved below for reference:
 END OLD layout
 {% endcomment %}
 
-<!-- NEW: Card grid layout (Archie + Cactus style, BuildwithHussein sharp borders) -->
-<div class="post-cards-grid">
+{% comment %}
+OLD: Card grid layout removed per user request.
+<div class="post-cards-grid">...</div>
+{% endcomment %}
+
+<!-- NEW: Plain text list, matching the news section style (date + title) -->
+<div class="news">
   {% if site.latest_posts != blank %}
     {% assign latest_posts_size = site.posts | size %}
     {% assign latest_posts = site.posts %}
@@ -62,59 +67,25 @@ END OLD layout
     {% else %}
       {% assign latest_posts_limit = latest_posts_size %}
     {% endif %}
-    {% for item in latest_posts limit: latest_posts_limit %}
-      {% if item.redirect == blank %}
-        {% assign post_url = item.url | relative_url %}
-      {% elsif item.redirect contains '://' %}
-        {% assign post_url = item.redirect %}
-      {% else %}
-        {% assign post_url = item.redirect | relative_url %}
-      {% endif %}
-
-      <a class="post-card-link" href="{{ post_url }}" {% if item.redirect contains '://' %}target="_blank"{% endif %}>
-        <article class="post-card">
-          <!-- Thumbnail -->
-          {% if item.thumbnail %}
-            <div class="post-card-thumb">
-              <img src="{{ item.thumbnail | relative_url }}" alt="{{ item.title }}" loading="lazy">
-            </div>
+    <div class="table-responsive">
+      <table class="table table-sm table-borderless">
+        {% for item in latest_posts limit: latest_posts_limit %}
+          {% if item.redirect == blank %}
+            {% assign post_url = item.url | relative_url %}
+          {% elsif item.redirect contains '://' %}
+            {% assign post_url = item.redirect %}
           {% else %}
-            <div class="post-card-thumb post-card-thumb-gradient"></div>
+            {% assign post_url = item.redirect | relative_url %}
           {% endif %}
-
-          <div class="post-card-body">
-            <!-- Date badge -->
-            <span class="post-card-date">{{ item.date | date: '%b %d, %Y' }}</span>
-
-            <!-- Title -->
-            <h3 class="post-card-title">
-              {{ item.title }}
-              {% if item.redirect contains '://' %}
-                <svg width="0.85rem" height="0.85rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="margin-left:4px;vertical-align:middle">
-                  <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-              {% endif %}
-            </h3>
-
-            <!-- Excerpt -->
-            {% if item.description %}
-              <p class="post-card-excerpt">{{ item.description | strip_html | truncatewords: 20 }}</p>
-            {% elsif item.excerpt %}
-              <p class="post-card-excerpt">{{ item.excerpt | strip_html | truncatewords: 20 }}</p>
-            {% endif %}
-
-            <!-- Tags -->
-            {% if item.tags and item.tags.size > 0 %}
-              <div class="post-card-tags">
-                {% for tag in item.tags limit: 3 %}
-                  <span class="post-card-tag">{{ tag }}</span>
-                {% endfor %}
-              </div>
-            {% endif %}
-          </div>
-        </article>
-      </a>
-    {% endfor %}
+          <tr>
+            <th scope="row" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
+            <td>
+              <a class="news-title" href="{{ post_url }}"{% if item.redirect contains '://' %} target="_blank"{% endif %}>{{ item.title }}</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
   {% else %}
     <p>No posts so far...</p>
   {% endif %}

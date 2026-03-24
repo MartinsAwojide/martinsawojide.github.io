@@ -1,32 +1,87 @@
 /**
- * toc-sidebar.js
- * Hextra-style IntersectionObserver that highlights the active heading link
- * in the #toc-sidebar nav as the user scrolls through the page.
+ * toc-sidebar.js — custom TOC builder + IntersectionObserver active-link highlighter
  *
- * Activated when #toc-sidebar exists in the DOM (i.e., page has toc: sidebar frontmatter).
- * Adds/removes the .toc-active class on matching <a> links inside #toc-sidebar.
+ * Replaces bootstrap-toc auto-discovery (which was unreliable for sub-headings).
+ * Reads h2, h3, h4 headings directly from the article content, builds a nested
+ * ul/li/a structure, then highlights the active link as the user scrolls.
+ *
+ * Cactus-style: # prefix for h2, ## for h3 (added via CSS ::before).
+ * Sticky behaviour is handled in _sass/_layout.scss (#toc-sidebar).
  */
 
 (function () {
   'use strict';
 
-  const sidebar = document.getElementById('toc-sidebar');
+  var sidebar = document.getElementById('toc-sidebar');
   if (!sidebar) return;
 
-  // Collect all heading anchors tracked in the sidebar
-  const sidebarLinks = Array.from(sidebar.querySelectorAll('a[href]'));
-  if (sidebarLinks.length === 0) return;
+  // ── 1. Find headings in the article content ──────────────────────────────
+  // Prefer the main content column; fall back to article or body.
+  var content =
+    document.querySelector('.col-sm-9') ||
+    document.querySelector('article') ||
+    document.body;
 
-  // Build a map: heading id → sidebar link element
-  const linkMap = {};
-  sidebarLinks.forEach(function (link) {
-    const href = link.getAttribute('href');
-    if (href && href.startsWith('#')) {
-      linkMap[href.slice(1)] = link;
+  var headings = Array.from(
+    content.querySelectorAll('h2[id], h3[id], h4[id]')
+  );
+
+  if (headings.length === 0) return;
+
+  // ── 2. Build nested ul/li/a list ─────────────────────────────────────────
+  var rootUl = document.createElement('ul');
+
+  var currentH2Li  = null;
+  var currentH2Ul  = null;
+  var currentH3Li  = null;
+  var currentH3Ul  = null;
+
+  headings.forEach(function (heading) {
+    // Strip the "## " ::before visual prefix from textContent if present
+    // (CSS ::before is not in textContent, so this is just a safety strip)
+    var text = heading.textContent.replace(/^[#\s]+/, '').trim();
+
+    var a = document.createElement('a');
+    a.href = '#' + heading.id;
+    a.textContent = text;
+
+    var li = document.createElement('li');
+    li.appendChild(a);
+
+    var tag = heading.tagName; // H2, H3, H4
+
+    if (tag === 'H2') {
+      rootUl.appendChild(li);
+      currentH2Li  = li;
+      currentH2Ul  = null;
+      currentH3Li  = null;
+      currentH3Ul  = null;
+    } else if (tag === 'H3') {
+      if (!currentH2Ul) {
+        currentH2Ul = document.createElement('ul');
+        (currentH2Li || rootUl).appendChild(currentH2Ul);
+      }
+      currentH2Ul.appendChild(li);
+      currentH3Li = li;
+      currentH3Ul = null;
+    } else { // H4
+      if (!currentH3Ul) {
+        currentH3Ul = document.createElement('ul');
+        (currentH3Li || currentH2Li || rootUl).appendChild(currentH3Ul);
+      }
+      currentH3Ul.appendChild(li);
     }
   });
 
-  let activeId = null;
+  sidebar.appendChild(rootUl);
+
+  // ── 3. IntersectionObserver — highlight active link on scroll ────────────
+  var linkMap = {};
+  sidebar.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    linkMap[a.getAttribute('href').slice(1)] = a;
+  });
+
+  var activeId = null;
 
   function setActive(id) {
     if (id === activeId) return;
@@ -39,36 +94,23 @@
     }
   }
 
-  // IntersectionObserver: watch all h2 and h3 that have an id
-  const headings = Array.from(
-    document.querySelectorAll('h2[id], h3[id]')
-  ).filter(function (h) {
-    return linkMap[h.id] !== undefined;
-  });
-
-  if (headings.length === 0) return;
-
-  // Threshold: trigger when heading enters top 20% of viewport
-  const observer = new IntersectionObserver(
+  // rootMargin pushes the "trigger line" to the top 20% of the viewport so
+  // the active heading updates just before it leaves the screen.
+  var observer = new IntersectionObserver(
     function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          setActive(entry.target.id);
-        }
-      });
+      // Pick the topmost intersecting heading
+      var visible = entries
+        .filter(function (e) { return e.isIntersecting; })
+        .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      if (visible.length > 0) {
+        setActive(visible[0].target.id);
+      }
     },
-    {
-      rootMargin: '0px 0px -75% 0px',
-      threshold: 0,
-    }
+    { rootMargin: '-5% 0px -70% 0px', threshold: 0 }
   );
 
-  headings.forEach(function (h) {
-    observer.observe(h);
-  });
+  headings.forEach(function (h) { observer.observe(h); });
 
-  // Fallback: set first link active initially if nothing is intersecting yet
-  if (headings.length > 0 && !activeId) {
-    setActive(headings[0].id);
-  }
+  // Activate first heading immediately
+  setActive(headings[0].id);
 })();

@@ -1,200 +1,333 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Martins Awojide",
+    "label": "AI Engineer · Lean Six Sigma Black Belt",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "awojidemartins@gmail.com",
+    "phone": "+250 (798) 694-256",
+    "url": "https://martinsawojide.github.io",
+    "summary": "AI Engineer and Automation Architect with a Master's in Engineering AI from Carnegie Mellon University (Distinction, GPA 3.75/4.0, Mastercard Foundation Scholar). Expert in building agentic workflows using Python, LangChain, and n8n. Lean Six Sigma Black Belt with $350K+ in verified savings delivered through process optimization across manufacturing and service environments.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "address": "68 Peregrine Drive, Great Warley",
+      "postalCode": "CM13 3GW",
+      "city": "Brentwood, Essex",
+      "countryCode": "GB",
+      "region": "England"
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "network": "GitHub",
+        "username": "martinsawojide",
+        "url": "https://github.com/martinsawojide"
       }
     ]
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
-    }
-  ],
-  "volunteer": [
+      "name": "Carnegie Mellon University Africa",
+      "position": "Graduate Teaching Assistant — EAI Project Methods",
+      "location": "Kigali, RW",
+      "startDate": "2025-08-01",
+      "endDate": "2025-10-01",
+      "summary": "Assisted students master essential elements of AI engineering like stakeholder analysis, system requirements gathering, prototyping, Agile project planning, and CI/CD by guiding hands-on assignments, clarifying core project methodologies, and supporting the final integration project.",
+      "highlights": []
+    },
     {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+      "name": "Carnegie Mellon University Africa",
+      "position": "Graduate Teaching Assistant — EAI System Design",
+      "location": "Kigali, RW",
+      "startDate": "2025-01-01",
+      "endDate": "2025-04-01",
+      "summary": "Advised 40+ graduate students on course content involving the setup and use of resource-constrained edge devices (Raspberry Pi and Arduino Nano BLE) for TinyML tasks and ModelOps (model performance analysis and maintenance) exercises using AWS, Docker, Flask and Plotly Dash.",
+      "highlights": []
+    },
+    {
+      "name": "Embedded Systems Lab, CMU-Africa",
+      "position": "Product Research Assistant",
+      "location": "Kigali, RW",
+      "startDate": "2024-05-01",
+      "endDate": "2024-08-01",
+      "summary": "Developed a design strategy using the IDDOV (DfX) framework for a low-cost multimodal data acquisition device, conducting Kano surveys in Africa and the USA to identify researcher needs, building a Kano model to define MVP features, and applying QFD to determine core technical specifications and guide SBC/MCU selection within a tiered product strategy.",
+      "highlights": []
+    },
+    {
+      "name": "Afretec Network, CMU-Africa",
+      "position": "Student Research Interviewer",
+      "location": "Kigali, RW",
+      "startDate": "2024-01-01",
+      "endDate": "2024-04-01",
+      "summary": "Engaged with circa 13 Principal Investigators from 11 multi-institutional projects across partner Universities through virtual interviews to gather relevant information on the progress and goals of the projects.",
+      "highlights": []
+    },
+    {
+      "name": "Dufil Prima Foods Plc",
+      "position": "Decision Intelligence Analyst",
+      "location": "Lagos, NGA",
+      "startDate": "2021-12-01",
+      "endDate": "2022-04-01",
+      "summary": "Handling Business Intelligence tasks and Process Improvement Strategy for the Head of Continuous Improvement & Sustainability and the C-suite at Group Corporate HQ.",
+      "highlights": [
+        "Analysed financial and operational data to indicate areas of interest to process owners and the Six Sigma team at factories",
+        "Led feasibility studies and entry strategy for alternative business opportunities in the Nigerian agriculture, consumer, and financial markets",
+        "Engaged in multiple internal improvement projects assigned by Business Heads and CXOs and led the new business search thinktank",
+        "Developed inflation nowcasting models using online search volume data to inform dynamic pricing strategies"
+      ]
+    },
+    {
+      "name": "Dufil Prima Foods Plc",
+      "position": "Operations Manager, Warehousing and Logistics",
+      "location": "Kaduna, NGA",
+      "startDate": "2021-01-01",
+      "endDate": "2021-11-01",
+      "summary": "Managed a department of 140+ personnel to achieve seamless warehousing operations and better integration with other departments within the Northern Noodles factory and the Corporate Logistics Team. Co-led SAP EWM implementation to replace legacy Orion ERP.",
+      "highlights": [
+        "Led SAP EWM system design and deployment for inbound/outbound logistics, collaborating with SAP functional consultants on warehouse structure configuration, bin management, and RF device integration for 20+ core warehouse associates",
+        "Developed low-code data acquisition system using Google AppSheet to feed SAP PM (Plant Maintenance) module, reducing manual data entry by 65%",
+        "Introduced Kanban principles in document flow tracking between QA, Production Planning and Finance departments, improving OTDIF by 84%",
+        "Completed ISO 22000 (FSMS) and ISO 9001:2015 (QMS) audits with zero non-conformance",
+        "Reduced Warehouse/Logistics downtime from 0.85% to 0.42% YTD in 8 months",
+        "Reduced Turnaround Time for RM, PKG and FG trucks by 57% through ETA tracking and SMED implementation"
+      ]
+    },
+    {
+      "name": "Dufil Prima Foods Plc",
+      "position": "Data Scientist, Industrial Optimization",
+      "location": "Lagos & Kaduna, NGA",
+      "startDate": "2018-12-01",
+      "endDate": "2020-12-01",
+      "summary": "Black Belt Project Facilitator focused on process improvement endeavors in production settings at Raffles Oil LFTZ Ent. & Northern Noodles Plc, subsidiaries of Dufil Prima Foods Plc.",
+      "highlights": [
+        "Anchored the development of a low-code software for transition to paperless reporting in three factory locations (Raffles, Insignia & Northern Noodles), reducing consumables cost by 95%",
+        "Handled a DMAIC project on laminate variance for low-volume Power Oil SKUs reducing raw material wastage from 3.28% to 1.3% in six months, resulting in $53,900 in year one and $88,800 p.a. afterwards",
+        "Managed a Lean project on packaging reliability for high-volume Power and Emperor Oil SKUs reducing product leakage from 3.2% to 1.3% in six months, with savings of $7,500 p.a.",
+        "Facilitated a project on Noodle Block Fat Content reduction for Indomie, Minimie and Mimee SKUs from 17.0% to 16.5%",
+        "Scheduled and conducted training of 40+ factory staff on 5S, Lean Six Sigma and on-the-job technicalities while mentoring newly recruited Lean Six Sigma Facilitators"
+      ]
     }
   ],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
+      "institution": "Carnegie Mellon University",
+      "location": "Pittsburgh, PA, USA",
+      "url": "https://www.cmu.edu",
+      "area": "Engineering Artificial Intelligence",
+      "studyType": "Master of Science (with Distinction)",
+      "startDate": "2023-08-01",
+      "endDate": "2025-05-01",
+      "score": "3.75/4.0",
+      "courses": [
+        "Efficient Machine Learning",
+        "Deep Learning",
+        "Machine Learning for Engineers",
+        "AI System Design",
+        "Embedded System Development",
+        "Systems Software Engineering",
+        "Mobile Big Data Analytics & Management",
+        "Cloud Computing",
+        "On-Device Machine Learning"
+      ]
+    },
+    {
+      "institution": "University of Lagos",
+      "location": "Lagos, NGA",
+      "url": "https://www.unilag.edu.ng",
+      "area": "Chemical Engineering",
+      "studyType": "Bachelor of Science (First Class Honours)",
+      "startDate": "2011-10-01",
+      "endDate": "2016-12-01",
+      "score": "4.74/5.0",
+      "courses": [
+        "Process Optimization",
+        "Process Dynamics & Control",
+        "Principles of Plant Design",
+        "Industrial Chemistry",
+        "Reaction Engineering",
+        "Polymer Processing",
+        "Biochemical Engineering",
+        "Environmental Pollution Engineering"
+      ]
     }
   ],
   "awards": [
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+      "title": "Mastercard Foundation Scholarship",
+      "date": "2023-08-01",
+      "awarder": "Mastercard Foundation / Carnegie Mellon University Africa",
+      "url": "https://mastercardfdn.org/",
+      "summary": "Full scholarship for the MS Engineering Artificial Intelligence programme at CMU-Africa."
+    },
+    {
+      "title": "Batch Topper — LSSBB Mumbai '20 Cohort",
+      "date": "2020-02-01",
+      "awarder": "Benchmark X 360",
+      "url": "https://www.benchmarksixsigma.com/forum/all-time-lean-six-sigma-black-belt-top-scorers/",
+      "summary": "Best in class, Lean Six Sigma Black Belt certification, February 2020 cohort."
+    },
+    {
+      "title": "Jack Delaney Award — Best Treasurer",
+      "date": "2018-09-01",
+      "awarder": "Financial DataHouse",
+      "url": "",
+      "summary": "Awarded Best Treasurer in the GLITS Fixed Income Trading Simulation."
+    },
+    {
+      "title": "Society of Petroleum Engineers Star Scholarship",
+      "date": "2014-01-01",
+      "awarder": "Society of Petroleum Engineers",
+      "url": "",
+      "summary": "Undergraduate scholarship awarded during BSc Chemical Engineering at University of Lagos."
+    },
+    {
+      "title": "MTN Foundation Scholarship",
+      "date": "2014-01-01",
+      "awarder": "MTN Foundation",
+      "url": "",
+      "summary": "Undergraduate merit scholarship awarded during BSc Chemical Engineering at University of Lagos."
+    },
+    {
+      "title": "NNPC Agbami Professional Scholarship",
+      "date": "2014-01-01",
+      "awarder": "NNPC / Agbami",
+      "url": "",
+      "summary": "Undergraduate scholarship awarded during BSc Chemical Engineering at University of Lagos."
     }
   ],
   "certificates": [
     {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-location-dot"
+      "name": "Neuromatch Deep Learning Course",
+      "date": "2025-07-01",
+      "issuer": "Neuromatch Academy",
+      "url": "https://docs.google.com/presentation/d/1IyQzd0Ug3Y5GcYGXJSNLeEFUMXACvWqmrJL50XDu8uA/edit?usp=sharing",
+      "icon": "fa-solid fa-brain"
     },
     {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
+      "name": "ML Summer School",
+      "date": "2025-07-01",
+      "issuer": "Cohere Labs",
+      "url": "",
+      "icon": "fa-solid fa-graduation-cap"
     },
     {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
+      "name": "Design for Six Sigma (DFSS) Training",
+      "date": "2021-01-01",
+      "issuer": "Benchmark X 360",
+      "url": "",
+      "icon": "fa-solid fa-chart-line"
     },
     {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
+      "name": "Lean Six Sigma Black Belt",
+      "date": "2020-02-01",
+      "issuer": "Benchmark X 360",
+      "url": "https://www.benchmarksixsigma.com/forum/all-time-lean-six-sigma-black-belt-top-scorers/",
+      "icon": "fa-solid fa-award"
     },
     {
-      "name": "Quantum Communication",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-calendar"
-    },
-    {
-      "name": "Quantum Teleportation",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-clipboard-check"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Zur Elektrody/namik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
-    },
-    {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
-    },
-    {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
+      "name": "Fixed Income Investments Trading",
+      "date": "2018-09-01",
+      "issuer": "Financial DataHouse",
+      "url": "",
+      "icon": "fa-solid fa-chart-bar"
     }
   ],
   "skills": [
     {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
+      "name": "Automation & Agentic AI",
+      "level": "",
+      "icon": "fa-solid fa-robot",
+      "keywords": ["n8n (Self-Hosted)", "LangChain", "LangGraph", "Docker", "REST APIs", "Webhooks", "Linux/Bash"]
+    },
+    {
+      "name": "AI & Machine Learning",
+      "level": "",
+      "icon": "fa-solid fa-microchip",
+      "keywords": ["Python", "PyTorch", "TensorFlow", "HuggingFace", "Ollama", "Llama.cpp", "RAG Pipelines", "PySpark", "Edge Impulse"]
+    },
+    {
+      "name": "Hardware & Embedded",
+      "level": "",
+      "icon": "fa-solid fa-memory",
+      "keywords": ["NVIDIA Jetson series", "Raspberry Pi & Pico", "Arduino Uno & Nano", "STM32 F-series"]
+    },
+    {
+      "name": "Process Optimization",
+      "level": "",
+      "icon": "fa-solid fa-gears",
+      "keywords": ["Lean Six Sigma Black Belt", "DMAIC", "DFSS", "Root Cause Analysis", "Statistical Process Control", "Minitab", "SAP EWM/ERP"]
+    },
+    {
+      "name": "Data & Dev Tools",
+      "level": "",
+      "icon": "fa-solid fa-code",
+      "keywords": ["Python", "C/C++", "Bash", "Git", "Flask", "Docker", "AWS", "GCP", "Google AppSheet", "Jira", "MS Excel"]
     }
   ],
   "languages": [
     {
-      "language": "German",
-      "fluency": "Native speaker",
-      "icon": ""
-    },
-    {
       "language": "English",
-      "fluency": "Fluent",
+      "fluency": "Native",
       "icon": ""
-    }
-  ],
-  "interests": [
-    {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
-    },
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
     }
   ],
   "projects": [
     {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
+      "name": "SCADAgric: Agentic Farm Monitoring",
+      "summary": "CMU Master's Capstone. Agentic AI workflow that continuously monitors environmental sensor data and triggers autonomous interventions without human oversight. Integrates LLM logic via LangChain to analyze sensor streams and execute decisions.",
+      "highlights": ["D. Nsanzimfura, C. Kwizera, G. Igwegbe, M. Awojide"],
+      "startDate": "2024-01-01",
+      "endDate": "2025-05-01",
+      "url": "https://github.com/gigwegbe/function-calling-for-sensors-at-the-edge"
+    },
+    {
+      "name": "Inflation Nowcasting with Online Search Volume Data",
+      "summary": "Predictive models using non-traditional data sources (online search volume) to forecast inflation. Co-authored with E. Aiken.",
+      "highlights": ["M. Awojide, E. Aiken"],
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-01",
+      "url": "https://typst.app/project/rqNGAGxHyRC5f7RdbKp0bs"
+    },
+    {
+      "name": "AutoVisionInspector",
+      "summary": "Google's Gemma 3n Impact Challenge. Automated visual inspection system using Gemma vision models.",
+      "highlights": ["G. Igwegbe, M. Awojide, M. Bless"],
+      "startDate": "2025-01-01",
+      "endDate": "2025-06-01",
+      "url": "https://www.kaggle.com/competitions/google-gemma-3n-hackathon/writeups/autovisioninspector"
+    },
+    {
+      "name": "Real-World Federated Learning on Edge Devices with NVFLARE",
+      "summary": "Deep Learning Indaba Poster. Multi-site federated learning deployment on heterogeneous edge hardware.",
+      "highlights": ["G. Igwegbe, M. Awojide, A. Adetunji"],
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-01",
+      "url": "https://docs.google.com/presentation/d/1fCkcd3-Ud2GcmTXdvc0g146fRz0kDQQe/edit?usp=sharing&ouid=115734867790364983685&rtpof=true&sd=true"
+    },
+    {
+      "name": "Stable Quantization-Aware Training for Vision-Language Models",
+      "summary": "Research on stable QAT techniques for VLMs on edge-class hardware.",
+      "highlights": ["B. Ebiyau, G. Igwegbe, M. Awojide, M. Bless"],
+      "startDate": "2024-01-01",
+      "endDate": "2025-01-01",
+      "url": "https://github.com/MartinsAwojide/VLM_Quantization-Aware_Training"
+    },
+    {
+      "name": "\"Hello Afrika!\": Speech Commands in Kinyarwanda",
+      "summary": "Presented at Data Science Africa 2024. Building speech command datasets and ASR models for Kinyarwanda.",
+      "highlights": ["G. Igwegbe, M. Awojide, M. Bless, N. Kadzo"],
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-01",
+      "url": "https://drive.google.com/file/d/1dlbZ50BIE8uVy8A8qmbkylxJ7jgmdvSP/view?usp=sharing"
+    },
+    {
+      "name": "TinyML Digital Counter for Electric Metering System",
+      "summary": "Presented at Hackster.io Impact Summit 2023. TinyML-based system for autonomous electricity meter reading on microcontrollers.",
+      "highlights": ["G. Igwegbe, M. Awojide"],
+      "startDate": "2023-01-01",
+      "endDate": "2023-12-01",
+      "url": "https://www.hackster.io/491913/tinyml-digital-counter-for-electric-metering-system-e5e36f"
     }
-  ]
+  ],
+  "volunteer": [],
+  "interests": [],
+  "references": [],
+  "publications": []
 }

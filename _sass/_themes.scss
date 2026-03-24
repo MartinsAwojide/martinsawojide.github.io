@@ -5,22 +5,21 @@
 @use "sass:color";
 
 :root {
-  --global-bg-color: #{$white-color};
-  --global-code-bg-color: #{$code-bg-color-light};
-  --global-text-color: #{$black-color};
-  --global-text-color-light: #{$grey-color};
-  /* OLD: --global-theme-color: #{$purple-color}; */
-  /* OLD: --global-hover-color: #{$purple-color}; */
-  --global-theme-color: #f02e18;
-  --global-hover-color: #f02e18;
+  /* Archie light theme — exact values from archie/assets/css/main.css */
+  --global-bg-color: #ffffff;
+  --global-code-bg-color: #f1f1f1;
+  --global-text-color: #232333;
+  --global-text-color-light: #737373;
+  --global-theme-color: #dc143c;        /* Archie --color-primary */
+  --global-hover-color: #b91c3c;        /* Archie --color-primary-hover */
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-dark};
   --global-footer-text-color: #{$grey-color-light};
   --global-footer-link-color: #{$white-color};
   --global-distill-app-color: #{$grey-color};
   --global-divider-color: rgba(0, 0, 0, 0.1);
-  --global-card-bg-color: #{$white-color};
-  --global-highlight-color: #{$red-color-dark};
+  --global-card-bg-color: #ffffff;
+  --global-highlight-color: #dc143c;
   --global-back-to-top-bg-color: rgba(
     #{color.channel($black-color, "red", $space: rgb)},
     #{color.channel($black-color, "green", $space: rgb)},
@@ -30,8 +29,18 @@
   --global-back-to-top-text-color: #{$white-color};
   --global-newsletter-bg-color: #{$white-color};
   --global-newsletter-text-color: #{$black-color};
-  --font-primary: 'Inter', 'Rubik', system-ui, sans-serif;
-  --font-mono: 'Overpass Mono', monospace;
+  /* OLD: --font-primary: 'Inter', 'Rubik', system-ui, sans-serif; */
+  --font-primary: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Roboto Mono', 'Courier New', monospace;
+  /* OLD: --font-mono: 'Roboto Mono', 'Overpass Mono', monospace; */
+  --font-mono: 'JetBrains Mono NF', 'JetBrains Mono', 'Roboto Mono', monospace;
+
+  /* Domain identity color palette (multi-domain personality) */
+  --domain-data-science: #2563eb;
+  --domain-industrial: #d97706;
+  --domain-edge-ai: #16a34a;
+  --domain-ai-science: #7c3aed;
+  --domain-multi-agent: #f02e18;
 
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;
@@ -80,28 +89,24 @@
 }
 
 html[data-theme="dark"] {
-  --global-bg-color: #{$grey-color-dark};
-  --global-code-bg-color: #{$code-bg-color-dark};
-  --global-text-color: #{$grey-color-light};
-  --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$cyan-color};
-  --global-hover-color: #{$cyan-color};
-  --global-hover-text-color: #{$white-color};
-  --global-footer-bg-color: #{$grey-color-light};
-  --global-footer-text-color: #{$grey-color-dark};
-  --global-footer-link-color: #{$black-color};
-  --global-distill-app-color: #{$grey-color-light};
-  --global-divider-color: #424246;
-  --global-card-bg-color: #{$grey-900};
-  --global-back-to-top-bg-color: rgba(
-    #{color.channel($white-color, "red", $space: rgb)},
-    #{color.channel($white-color, "green", $space: rgb)},
-    #{color.channel($white-color, "blue", $space: rgb)},
-    0.5
-  );
-  --global-back-to-top-text-color: #{$black-color};
-  --global-newsletter-bg-color: #{$grey-color-light};
-  --global-newsletter-text-color: #{$grey-color-dark};
+  /* Archie night theme — exact values from archie/assets/css/main.css */
+  --global-bg-color: #202124;           /* Archie --color-background-dark */
+  --global-code-bg-color: #3a3a3a;      /* Archie --color-background-code-dark */
+  --global-text-color: #ffffff;         /* Archie --color-text-dark */
+  --global-text-color-light: #dddddd;   /* Archie --color-text-muted-dark */
+  --global-theme-color: #50fa7b;        /* Archie --color-primary-dark (neon green) */
+  --global-hover-color: #3dd458;        /* Archie --color-primary-hover-dark */
+  --global-hover-text-color: #000000;   /* black on neon green */
+  --global-footer-bg-color: #272822;
+  --global-footer-text-color: #dddddd;
+  --global-footer-link-color: #50fa7b;
+  --global-distill-app-color: #dddddd;
+  --global-divider-color: #3a3a3a;      /* matches code bg for consistency */
+  --global-card-bg-color: #272822;      /* Archie --color-background-pre-dark */
+  --global-back-to-top-bg-color: rgba(255, 255, 255, 0.15);
+  --global-back-to-top-text-color: #ffffff;
+  --global-newsletter-bg-color: #272822;
+  --global-newsletter-text-color: #dddddd;
 
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;

@@ -2,24 +2,104 @@
  * Styles for the base elements of the theme.
  ******************************************************************************/
 
-// Typography
+// Typography — Archie exact stack
+// html + body: Roboto Mono (monospace) as the universal base — exactly as Archie sets it
+// paragraphs: override to Fira Sans for comfortable long-form reading
+// headings: inherit Roboto Mono from body
 
+// Typography — Archie-inspired: monospace heading base, Fira Sans body, 20px root
+// Archie body: 1.2em (19.2px) + font-weight: 400 Lato. We use 20px + weight 500 Fira Sans
+// for the "heavier than regular" feel the user wants.
+
+/* OLD: font-size: 18px; then 20px — reduced to 16px, standard for this template */
+html,
+body {
+  font-family: var(--font-heading); /* 'Roboto Mono', monospace — Archie base font */
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* Body prose: Fira Sans regular weight */
 p,
+em,
+li,
+span,
+strong {
+  color: var(--global-text-color);
+  font-family: var(--font-primary); /* 'Fira Sans', sans-serif */
+  /* OLD: font-weight: 500; — too bold per user */
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Dates, metadata — Roboto Mono at 0.85em */
+time,
+.post-card-date,
+.post-meta,
+.card-meta,
+.about-hero-tagline {
+  font-family: var(--font-heading);
+  font-size: 0.85em;
+  font-weight: 400;
+}
+
+/* Headings: scaled sizes (Archie uses uniform 1.2rem; we vary for hierarchy) */
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-em,
-div,
-li,
-span,
-strong {
+h6 {
   color: var(--global-text-color);
-  // font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, monospace;
-  /* OLD: font-family: 'Overpass Mono', 'Maven Pro', Rubik; */
-  font-family: var(--font-primary);
+  font-family: var(--font-heading);
+  /* OLD: font-weight: 700; — too heavy with Roboto Mono */
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* At 16px base: h1=28.8px, h2=22.4px, h3=18.4px, h4=16px */
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.4rem; margin-top: 1.75rem; margin-bottom: 0.6rem; }
+h3 { font-size: 1.15rem; margin-top: 1.25rem; margin-bottom: 0.4rem; }
+h4, h5, h6 { font-size: 1rem; }
+
+/* Site title / hero name — Roboto Mono, let _layout.scss set the size */
+/* OLD: font-size: 1.4rem !important; — override removed, _layout.scss .about-hero-name handles it */
+.navbar-brand {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+}
+
+/* Archie body paragraph spacing */
+p {
+  line-height: 1.5;
+  font-size: inherit; /* inherits 15px from html */
+  margin-bottom: 1rem;
+}
+
+/* OLD: duplicate h2/h3 overrides removed — now handled by global h1-h6 rules above */
+.post-content,
+article {
+  p {
+    margin-bottom: 1.2rem;
+  }
+}
+
+// =============================================================================
+// Archie "hashtag" heading style
+// Scope to post/page content only — keeps hero name and navbar clean
+// =============================================================================
+
+.post-content,
+.page-content,
+article .clearfix {
+  h1::before { content: "# ";    color: var(--global-theme-color); font-weight: 700; }
+  h2::before { content: "## ";   color: var(--global-theme-color); font-weight: 700; }
+  h3::before { content: "### ";  color: var(--global-theme-color); font-weight: 700; }
+  h4::before { content: "#### "; color: var(--global-theme-color); font-weight: 700; }
+  h5::before { content: "##### "; color: var(--global-theme-color); font-weight: 700; }
+  h6::before { content: "###### "; color: var(--global-theme-color); font-weight: 700; }
 }
 
 hr {
@@ -38,17 +118,52 @@ table {
   }
 }
 
+/* OLD plain underline:
+a, table.table a {
+  color: var(--global-theme-color);
+  &:hover { color: var(--global-theme-color); text-decoration: underline; }
+}
+*/
+
+/* Archie link style: thick bottom border, background-fill on hover */
 a,
 table.table a {
-  color: var(--global-theme-color);
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px solid var(--global-theme-color);
+  transition: background-color 0.15s ease, color 0.15s ease;
 
-  &:hover {
-    color: var(--global-theme-color);
-    text-decoration: underline;
+  &:hover,
+  &:focus {
+    background-color: var(--global-theme-color);
+    color: #fff !important;
+    text-decoration: none;
+    border-bottom-color: var(--global-theme-color);
   }
+}
 
-  &:hover:after :not(.nav-item.dropdown) {
-    width: 100%;
+/* Exempt nav links, buttons, cards, icons, images from the Archie link style */
+.navbar a,
+.nav-item a,
+.btn,
+.card a,
+.post-card-link,
+.project-card-link,
+.about-hero-btn,
+.feature-card,
+.social a,
+.lang-switcher-code,
+.toc-sidebar a,
+#toc-sidebar a,
+a.no-underline {
+  border-bottom: none;
+  background-color: transparent;
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    color: var(--global-theme-color) !important;
   }
 }
 
@@ -883,6 +998,7 @@ pre {
   background-color: var(--global-code-bg-color);
   border-radius: 6px;
   padding: 6px 12px;
+  font-family: var(--font-mono);
 
   pre,
   code {
@@ -890,6 +1006,7 @@ pre {
     border-radius: 0;
     margin-bottom: 0;
     padding: 0;
+    font-family: var(--font-mono);
   }
 }
 
@@ -898,6 +1015,7 @@ code {
   background-color: var(--global-code-bg-color);
   border-radius: 3px;
   padding: 3px 3px;
+  font-family: var(--font-mono);
 }
 
 // Transitioning Themes

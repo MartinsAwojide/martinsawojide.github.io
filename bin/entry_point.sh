@@ -21,6 +21,7 @@ manage_gemfile_lock() {
 
 start_jekyll() {
     manage_gemfile_lock
+    bundle install   # install any gems added to Gemfile since the image was built
     bundle exec jekyll serve --watch --port=8080 --host=0.0.0.0 --livereload --verbose --trace --force_polling &
 }
 

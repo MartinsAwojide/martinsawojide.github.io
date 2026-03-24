@@ -1,55 +1,62 @@
 {% comment %}
-  Language switcher dropdown for the navbar.
-  Uses jekyll-polyglot's site.languages and page_lang.
-  Displays flag emoji + language name for each configured language.
-  Add this include inside header.liquid beside the dark mode toggle.
+  Language switcher — Bootstrap 5 navbar dropdown.
+  Structure: <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> inside a
+  <li class="nav-item dropdown"> (set by header.liquid).
+  OLD: wrapped in its own <div class="lang-switcher dropdown"> — caused nested dropdown conflicts.
 {% endcomment %}
 
-{% assign lang_flags = "" %}
-{% assign lang_names = "" %}
-
-<div class="lang-switcher dropdown">
-  <button
-    class="btn lang-switcher-btn dropdown-toggle"
-    type="button"
-    id="langSwitcherBtn"
+{% if site.languages and site.languages.size > 1 %}
+  <a
+    class="nav-link dropdown-toggle lang-switcher-btn"
+    href="#"
+    role="button"
     data-bs-toggle="dropdown"
     aria-expanded="false"
     aria-label="Select language"
   >
-    {% case site.active_lang %}
-      {% when "en" %}<span aria-hidden="true">🇬🇧</span> EN
-      {% when "fr" %}<span aria-hidden="true">🇫🇷</span> FR
-      {% when "es" %}<span aria-hidden="true">🇪🇸</span> ES
-      {% when "pt-br" %}<span aria-hidden="true">🇧🇷</span> PT
-      {% when "de" %}<span aria-hidden="true">🇩🇪</span> DE
-      {% when "ja" %}<span aria-hidden="true">🇯🇵</span> JA
-      {% when "zh-cn" %}<span aria-hidden="true">🇨🇳</span> ZH
-      {% when "no" %}<span aria-hidden="true">🇳🇴</span> NO
-      {% else %}<span aria-hidden="true">🌐</span> {{ site.active_lang | upcase }}
-    {% endcase %}
-  </button>
-  <ul class="dropdown-menu dropdown-menu-end lang-switcher-menu" aria-labelledby="langSwitcherBtn">
+    {{ site.active_lang | upcase }}
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end lang-switcher-menu" aria-label="Language switcher">
+    {% comment %}
+      Strip any existing language prefix from page.url to get the bare path,
+      then prepend the target language prefix.
+    {% endcomment %}
+    {% assign bare_url = page.url %}
+    {% for l in site.languages %}
+      {% unless l == site.default_lang %}
+        {% assign l_prefix = '/' | append: l %}
+        {% if page.url contains l_prefix %}
+          {% assign bare_url = page.url | remove_first: l_prefix %}
+          {% if bare_url == '' or bare_url == nil %}{% assign bare_url = '/' %}{% endif %}
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+
     {% for lang in site.languages %}
+      {% if lang == site.default_lang %}
+        {% assign lang_url = bare_url %}
+      {% else %}
+        {% assign lang_url = '/' | append: lang | append: bare_url %}
+      {% endif %}
       <li>
         <a
           class="dropdown-item lang-switcher-item{% if lang == site.active_lang %} active{% endif %}"
-          href="/{{ lang }}/"
+          href="{{ lang_url }}"
           hreflang="{{ lang }}"
         >
           {% case lang %}
-            {% when "en" %}<span aria-hidden="true">🇬🇧</span> English
-            {% when "fr" %}<span aria-hidden="true">🇫🇷</span> Français
-            {% when "es" %}<span aria-hidden="true">🇪🇸</span> Español
-            {% when "pt-br" %}<span aria-hidden="true">🇧🇷</span> Português (BR)
-            {% when "de" %}<span aria-hidden="true">🇩🇪</span> Deutsch
-            {% when "ja" %}<span aria-hidden="true">🇯🇵</span> 日本語
-            {% when "zh-cn" %}<span aria-hidden="true">🇨🇳</span> 中文（简体）
-            {% when "no" %}<span aria-hidden="true">🇳🇴</span> Norsk
+            {% when "en" %}English
+            {% when "fr" %}Français
+            {% when "es" %}Español
+            {% when "pt-br" %}Português (BR)
+            {% when "de" %}Deutsch
+            {% when "ja" %}日本語
+            {% when "zh-cn" %}中文（简体）
+            {% when "no" %}Norsk
             {% else %}{{ lang | upcase }}
           {% endcase %}
         </a>
       </li>
     {% endfor %}
   </ul>
-</div>
+{% endif %}

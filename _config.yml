@@ -9,7 +9,7 @@ last_name: Awojide
 contact_note: >
   You can even add a little note about which of these is the best way to reach you.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  Data Scientist · Industrial Engineer · Edge AI. MS Engineering AI, Carnegie Mellon University Africa (Distinction). Lean Six Sigma Black Belt.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -20,7 +20,7 @@ lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://martinsawojide.github.io # the base hostname & protocol for your site
-baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
+baseurl: "" # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: true # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
@@ -146,8 +146,6 @@ newsletter:
 
 collections:
   news:
-    defaults:
-      layout: post
     output: true
     permalink: /:collection/:title/
   projects:
@@ -157,12 +155,14 @@ collections:
 announcements:
   enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  # OLD limit: 5 → 2
+  limit: 1 # reduced to 1 per user request
 
 latest_posts:
   enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  # OLD limit: 3 → 2
+  limit: 1 # reduced to 1 per user request
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
@@ -218,7 +218,7 @@ plugins:
   - jekyll-link-attributes
   - jekyll-minifier
   - jekyll-paginate-v2
-  - jekyll-polyglot
+  # - jekyll-polyglot  # disabled — no multilingual support
   - jekyll-regex-replace
   - jekyll/scholar
   - jekyll-sitemap
@@ -228,25 +228,10 @@ plugins:
   - jemoji
   - terser
 
-# -----------------------------------------------------------------------------
-# i18n / Multi-language (jekyll-polyglot)
-# Languages: English (default), French, Spanish, Portuguese (BR),
-#            German, Japanese, Chinese Simplified, Norwegian
-# Only about + cv pages are translated initially; all others excluded to avoid
-# conflicts with jekyll-scholar, jekyll-archives, and jekyll-paginate-v2.
-# -----------------------------------------------------------------------------
-languages: ["en", "fr", "es", "pt-br", "de", "ja", "zh-cn", "no"]
-default_lang: "en"
-exclude_from_localization:
-  - assets
-  - _sass
-  - Gemfile
-  - Gemfile.lock
-  - _bibliography
-  - _posts
-  - _news
-  - _projects
-parallel_localization: true
+# languages: ["en", "fr"]  # polyglot disabled
+# default_lang: "en"
+# exclude_from_localization: [assets, _sass, Gemfile, _bibliography]
+# parallel_localization: false
 
 # Sitemap settings
 defaults:
@@ -254,6 +239,26 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  # Moved from collections.news.defaults (not valid inside collections block)
+  - scope:
+      path: ""
+      type: "news"
+    values:
+      layout: post
+  # Enable sidebar TOC for all posts by default
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      toc:
+        sidebar: left
+  # Enable sidebar TOC for all projects by default
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      toc:
+        sidebar: left
 
 sass:
   style: compressed
@@ -297,8 +302,10 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  # OLD: last_name: [Einstein]
+  # OLD: first_name: [Albert, A.]
+  last_name: [Awojide]
+  first_name: [Martins, M.]
 
   style: apa
   locale: en
@@ -476,7 +483,9 @@ third_party_libraries:
     url:
       # fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
       # fonts: "https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Overpass+Mono:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-      fonts: "https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Maven+Pro:wght@400..900&family=Overpass+Mono:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      # fonts: "https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Maven+Pro:wght@400..900&family=Overpass+Mono:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"  # OLD
+      # OLD: fonts: "https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Roboto+Mono:wght@300..700&family=Overpass+Mono:wght@300..700&display=swap"
+      fonts: "https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:ital,wght@0,300..700;1,300..700&family=Roboto+Mono:wght@300..700&family=Overpass+Mono:wght@300..700&display=swap"
   # anime.js — lightweight JavaScript animation library (loaded when page.anime: true)
   animejs:
     integrity:

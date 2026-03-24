@@ -26,11 +26,8 @@ layout: default
             {{ site.title }}
           {% endif %}
         </h1>
-        <p class="about-hero-tagline">Data Scientist &middot; Industrial Engineer &middot; Edge AI</p>
-        <div class="about-hero-cta">
-          <a href="{{ '/projects/' | relative_url }}" class="btn about-hero-btn about-hero-btn-primary">View Projects</a>
-          <a href="{{ '/blog/' | relative_url }}" class="btn about-hero-btn about-hero-btn-outline">Read Blog</a>
-        </div>
+        {% comment %} OLD tagline — moved to page body in about.md {% endcomment %}
+        {% comment %} <p class="about-hero-tagline">Data Scientist &middot; Industrial Engineer &middot; Edge AI &middot; AI for Science &middot; Agentic AI</p> {% endcomment %}
       </div>
     </div>
   </header>
@@ -61,24 +58,10 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
-    <!-- Feature cards: Data Science, Industrial Engineering, Edge Computing & AI -->
-    <div class="feature-cards-row">
-      <div class="feature-card">
-        <div class="feature-card-icon"><i class="fas fa-chart-bar"></i></div>
-        <div class="feature-card-title">Data Science</div>
-        <div class="feature-card-desc">Machine learning, statistical analysis, and AI-driven insights.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card-icon"><i class="fas fa-industry"></i></div>
-        <div class="feature-card-title">Industrial Engineering</div>
-        <div class="feature-card-desc">Six Sigma, process optimization, and operational excellence.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card-icon"><i class="fas fa-microchip"></i></div>
-        <div class="feature-card-title">Edge Computing & AI</div>
-        <div class="feature-card-desc">Local inference on hardware — NVIDIA Jetson, Raspberry Pi, TinyML.</div>
-      </div>
-    </div>
+    {% comment %}
+    OLD: Feature cards row removed per user request.
+    <div class="feature-cards-row">...</div>
+    {% endcomment %}
 
     <!-- News -->
     {% if page.news and site.announcements and site.announcements.enabled %}
