@@ -29,7 +29,7 @@ llama.cpp provides CPU-optimised quantised inference for LLaMA-architecture mode
 ## Performance
 
 | Metric | Reading |
-|---|---|
+| --- | --- |
 | Prompt speed | ~19 tok/s |
 | Generation | ~9 tok/s |
 | Image encode | ~21 s |

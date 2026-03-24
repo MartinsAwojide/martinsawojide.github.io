@@ -30,4 +30,4 @@ Agricultural sensors (soil moisture, temperature, humidity, CO₂) produce conti
 
 - [GitHub Repository](https://github.com/gigwegbe/function-calling-for-sensors-at-the-edge)
 
-{% cite nsanzimfura2024scadagric %}
+{% cite nsanzimfura2025scadagric %}
