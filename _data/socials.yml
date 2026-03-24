@@ -1,11 +1,11 @@
 # Social media links — only github, linkedin, x (twitter), and email enabled.
 # All others disabled per user request.
 
-email: awojidemartins@gmail.com   # your email address
-github_username: martinsawojide  # your GitHub user name
+email: awojidemartins@gmail.com # your email address
+github_username: martinsawojide # your GitHub user name
 linkedin_username: martinsawojide # your LinkedIn user name
-x_username: MartinsAwojide       # your X (Twitter) handle
-medium_username: martinsawojide  # your Medium handle
+x_username: MartinsAwojide # your X (Twitter) handle
+medium_username: martinsawojide # your Medium handle
 
 # --- disabled ---
 # inspirehep_id: 1010907

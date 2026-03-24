@@ -23,11 +23,11 @@ Visual inspection of manufactured goods (packaging integrity, surface defects, f
 
 ## Performance
 
-| Metric | Cloud (GPU server) | Edge (Jetson Orin) |
-| --- | --- | --- |
-| Inference latency | 8 ms | 9.2 ms |
-| Throughput | 125 FPS | 108 FPS |
-| Accuracy (mAP@0.5) | 91.3% | 90.8% |
+| Metric             | Cloud (GPU server) | Edge (Jetson Orin) |
+| ------------------ | ------------------ | ------------------ |
+| Inference latency  | 8 ms               | 9.2 ms             |
+| Throughput         | 125 FPS            | 108 FPS            |
+| Accuracy (mAP@0.5) | 91.3%              | 90.8%              |
 
 Accuracy degradation of <0.5% with full independence from cloud infrastructure.
 

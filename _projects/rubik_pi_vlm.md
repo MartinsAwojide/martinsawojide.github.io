@@ -28,12 +28,12 @@ llama.cpp provides CPU-optimised quantised inference for LLaMA-architecture mode
 
 ## Performance
 
-| Metric | Reading |
-| --- | --- |
+| Metric       | Reading   |
+| ------------ | --------- |
 | Prompt speed | ~19 tok/s |
-| Generation | ~9 tok/s |
-| Image encode | ~21 s |
-| Total time | ~31.6 s |
+| Generation   | ~9 tok/s  |
+| Image encode | ~21 s     |
+| Total time   | ~31.6 s   |
 
 Image encoding dominates total latency — the model processes the visual token sequence on CPU, which is the primary bottleneck on this hardware class.
 

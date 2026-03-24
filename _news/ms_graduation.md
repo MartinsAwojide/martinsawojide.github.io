@@ -6,4 +6,3 @@ related_posts: false
 ---
 
 Graduated with **Distinction** from Carnegie Mellon University's MS in Engineering Artificial Intelligence programme. Mastercard Foundation Scholar. 🎓
-
