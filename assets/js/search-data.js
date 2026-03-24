@@ -30,56 +30,25 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-repositories",
-          title: "repositories",
-          description: "Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/repositories/";
-          },
         },{id: "nav-cv",
           title: "cv",
-          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          description: "Martins Awojide — AI Engineer · Lean Six Sigma Black Belt · MS Engineering AI, Carnegie Mellon University (Distinction)",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "nav-teaching",
-          title: "teaching",
-          description: "Materials for courses you taught. Replace this text with your description.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/teaching/";
-          },
-        },{id: "nav-people",
-          title: "people",
-          description: "members of the lab or group",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/people/";
-          },
-        },{id: "dropdown-publications",
-              title: "publications",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "";
-              },
-            },{id: "dropdown-projects",
-              title: "projects",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "";
-              },
-            },{id: "dropdown-blog",
-              title: "blog",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/blog/";
-              },
-            },{id: "post-a-post-with-image-galleries",
+        },{id: "post-scadagric-agentic-farm-monitoring",
+      
+        title: "SCADAgric: Agentic Farm Monitoring",
+      
+      description: "An agentic farm monitoring system combining IoT simulation, ThingsBoard, Chainlit, and LangGraph for real-time sensor monitoring and LLM-powered decision-making. CMU-Africa Master&#39;s Capstone, April 2025.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/scadagric/";
+        
+      },
+    },{id: "post-a-post-with-image-galleries",
       
         title: "a post with image galleries",
       
@@ -442,6 +411,9 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
+          section: "News",},{id: "news-graduated-with-distinction-from-carnegie-mellon-university-s-ms-in-engineering-artificial-intelligence-programme-mastercard-foundation-scholar",
+          title: 'Graduated with Distinction from Carnegie Mellon University’s MS in Engineering Artificial Intelligence programme....',
+          description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
@@ -487,40 +459,75 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-autovisioninspector",
+          title: 'AutoVisionInspector',
+          description: "Edge-deployed automated visual quality inspection for manufacturing defect detection",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/autovisioninspector/";
+            },},{id: "projects-federated-learning-at-the-edge",
+          title: 'Federated Learning at the Edge',
+          description: "Multi-site NVFLARE deployment for privacy-preserving ML on heterogeneous hardware",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/federated_learning_edge/";
+            },},{id: "projects-inflation-nowcasting",
+          title: 'Inflation Nowcasting',
+          description: "High-frequency ML models for real-time inflation estimation in Sub-Saharan Africa",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/inflation_nowcasting/";
+            },},{id: "projects-screen-scraping-with-a-vlm-on-the-rubik-pi",
+          title: 'Screen Scraping with a VLM on the Rubik Pi',
+          description: "Running Liquid AI&#39;s LVLM2.0 1.5B on a Rubik Pi 3 edge device with llama.cpp for visual screen-scraping tasks",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/rubik_pi_vlm/";
+            },},{id: "projects-scadagric",
+          title: 'SCADAgric',
+          description: "LLM function-calling framework for agricultural IoT sensors at the edge",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/scadagric/";
+            },},{id: "projects-real-time-fruit-detection-on-the-stm32n6",
+          title: 'Real-Time Fruit Detection on the STM32N6',
+          description: "YOLOv5 object detection on the STM32N6570-DK using the Neural ART Accelerator and Edge Impulse",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/stm32n6_fruit/";
+            },},{id: "projects-tinyml-digital-counter",
+          title: 'TinyML Digital Counter',
+          description: "Screen-scraping electricity meter displays with a custom neural network on an OpenMV Cam M7",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/tinyml_counter/";
             },},{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+          window.open("mailto:%61%77%6F%6A%69%64%65%6D%61%72%74%69%6E%73@%67%6D%61%69%6C.%63%6F%6D", "_blank");
         },
       },{
-        id: 'social-inspire',
-        title: 'Inspire HEP',
+        id: 'social-github',
+        title: 'GitHub',
         section: 'Socials',
         handler: () => {
-          window.open("https://inspirehep.net/authors/1010907", "_blank");
+          window.open("https://github.com/martinsawojide", "_blank");
         },
       },{
-        id: 'social-rss',
-        title: 'RSS Feed',
+        id: 'social-linkedin',
+        title: 'LinkedIn',
         section: 'Socials',
         handler: () => {
-          window.open("/feed.xml", "_blank");
+          window.open("https://www.linkedin.com/in/martinsawojide", "_blank");
         },
       },{
-        id: 'social-scholar',
-        title: 'Google Scholar',
+        id: 'social-x',
+        title: 'X',
         section: 'Socials',
         handler: () => {
-          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+          window.open("https://twitter.com/MartinsAwojide", "_blank");
         },
       },{
-        id: 'social-custom_social',
-        title: 'Custom_social',
+        id: 'social-medium',
+        title: 'Medium',
         section: 'Socials',
         handler: () => {
-          window.open("https://www.alberteinstein.com/", "_blank");
+          window.open("https://medium.com/@martinsawojide", "_blank");
         },
       },{
       id: 'light-theme',
